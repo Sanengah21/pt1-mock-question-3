@@ -19,7 +19,7 @@ using namespace std;
 
 class Fraction {
 
-	friend bool operator >( Fraction c1, Fraction c2);
+	friend bool operator >( Fraction F1, Fraction F2);
 	friend Fraction add(int, Fraction);
 	friend Fraction add(Fraction, int);
 
@@ -31,3 +31,51 @@ public:
 	Fraction(int n, int d) : num(n), denom(d) { };
 	void print() { cout << num << "/" << denom; };
 };
+
+
+bool operator > (Fraction f1, Fraction f2)
+{
+	bool isGreaterThan;
+
+	if (f1.denom != f2.denom)
+		isGreaterThan = (f1.denom < f2.denom);
+
+	else
+		isGreaterThan = (f1.num > f2.num);
+
+	return isGreaterThan;
+}
+
+Fraction add(int inputNumber, Fraction fraction1)
+{
+	fraction1.num = (inputNumber*fraction1.denom) + fraction1.num;
+	
+	return fraction1;
+}
+
+
+Fraction add(Fraction fraction1, int inputNumber)
+{
+
+	fraction1.num = (inputNumber*fraction1.denom) + fraction1.num;
+
+	return fraction1;
+
+}
+
+int main()
+{
+
+	Fraction fraction1(2, 13);
+	Fraction fraction2(3, 11);
+
+	if (fraction1 > fraction2) {
+
+		cout << "fraction1 is greater than fraction2" << endl;
+	}
+
+	else {
+		cout << " fraction2 is greater than fraction1 " << endl;
+	}
+
+}
