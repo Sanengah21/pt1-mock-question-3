@@ -66,8 +66,8 @@ Fraction add(Fraction fraction1, int inputNumber)
 int main()
 {
 
-	Fraction fraction1(2, 13);
-	Fraction fraction2(3, 11);
+	Fraction fraction1(1, 2);
+	Fraction fraction2(3, 5);
 
 	if (fraction1 > fraction2) {
 
@@ -78,4 +78,13 @@ int main()
 		cout << " fraction2 is greater than fraction1 " << endl;
 	}
 
+	fraction1 = add(1, fraction1);
+	fraction1.print();
+	cout << endl;
+
+	fraction2 = add(fraction2, 3);
+	fraction2.print();
+	cout << endl;
+
+	return 0;
 }
