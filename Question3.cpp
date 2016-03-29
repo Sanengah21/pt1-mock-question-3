@@ -18,10 +18,16 @@ using namespace std;
 // 3.3 create a driver program to test your overloaded > operators and your overloaded 
 
 class Fraction {
+
+	friend bool operator >( Fraction c1, Fraction c2);
+	friend Fraction add(int, Fraction);
+	friend Fraction add(Fraction, int);
+
+
 private:
 	int num;				// numerator;
 	int denom;				// denominator;
 public:
-	Fraction(int n, int d) : num(n), denum(d) { };
+	Fraction(int n, int d) : num(n), denom(d) { };
 	void print() { cout << num << "/" << denom; };
 };
